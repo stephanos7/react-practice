@@ -7,7 +7,8 @@ class StorePicker extends React.Component{
     // Always only return a SINGLE JSX element. Everything else must be nested
             <form className="store-selector">
               { /* This how to comment in JSX :-! Best to avoid!*/ }
-              { /* Also never comment right below "return!"It will give an error */}
+              { /* Must use JS block comments with asterisks. // will comment out the end of curly brackets*/ }
+              { /* Also never comment with curly brackets right below "return!"It will give an error */}
               <h2>Please enter a store</h2>
               <input type="text" placeholder="Store Name" required/>
               <button type="submit">Visit Store</button>
