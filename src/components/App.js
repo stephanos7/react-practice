@@ -22,7 +22,7 @@ class App extends React.Component{
   }
 
   loadSampleFishes = () => {
-    this.setState({ fishes: sampleFishes});
+    this.setState({ fishes: sampleFishes})
   }
 
   render(){
@@ -31,9 +31,8 @@ class App extends React.Component{
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           <ul className="fishes">
-            {Object.keys(this.state.fishes).map( element => {
-            <p>{element}</p>
-            } )}
+            {Object.keys(this.state.fishes).map( element => 
+            <Fish details={this.state.fishes[element]}/> )}
           </ul>
         </div>
         <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes}/>
