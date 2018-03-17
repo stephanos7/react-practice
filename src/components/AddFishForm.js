@@ -2,16 +2,17 @@ import React from "react";
 
 class AddFishForm extends React.Component {
 
-  addFish = (e) => {
+
+  createFish = (e) => {
     e.preventDefault();
-    const fishDetails = {
+    const fish = {
       name: this.fishName.value,
-      price: this.fishPrice.value,
+      price: parseFloat(this.fishPrice.value),
       status: this.fishStatus.value,
       desc: this.fishDesc.value,
       image:this.fishImage.value
-    }   
-    console.log(fishDetails)
+    }
+    this.props.addFish(fish);
   }
 
   render(){
@@ -25,7 +26,7 @@ class AddFishForm extends React.Component {
         </select>
         <textarea name="desc" placeholder="desc"  ref={ input => this.fishDesc = input}/>
         <input name="image" type="text" placeholder="image"  ref={ input => this.fishImage = input}/>
-        <button type="submit">Add Fish</button>
+        <button type="submit" onClick={this.createFish}>Add Fish</button>
       </form>
     )
   }
