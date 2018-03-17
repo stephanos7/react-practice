@@ -1,4 +1,5 @@
 import React from "react";
+import { formatPrice } from "../helpers";
 
 class Fish extends React.Component {
 
@@ -11,7 +12,7 @@ class Fish extends React.Component {
         <img src={image} alt={desc} />
         <h3 className="fish-name">
           {name}
-          <span className="price">{price}</span>
+          <span className="price">{formatPrice(price)}</span>
         </h3>
       </li>
     )
