@@ -14,10 +14,11 @@ class StorePicker extends React.Component{
     return (
     // Always only return a SINGLE JSX element. Everything else must be nested
             <form className="store-selector" 
-                  onSubmit={this.goToStore}
-                  ref={ input =>  this.formInput = input }>
+                  onSubmit={this.goToStore}>
               <h2>Please enter a store</h2>
-              <input type="text" placeholder="Store Name" required defaultValue={getFunName()}/>
+              <input type="text" placeholder="Store Name" required 
+                     defaultValue={getFunName()}
+                     ref={ input =>  this.formInput = input } />
               <button type="submit">Visit Store</button>
             </form>
             )
