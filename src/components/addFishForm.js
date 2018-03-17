@@ -10,3 +10,5 @@ class addFishForm extends React.Component {
   }
 
 }
+
+export default addFishForm;
