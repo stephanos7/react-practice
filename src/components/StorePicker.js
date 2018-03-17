@@ -1,16 +1,23 @@
 import React from "react";
 
+import { getFunName } from "../helpers";
+
 class StorePicker extends React.Component{
+
+  goToStore = (event) => {
+    event.preventDefault();
+    console.log(this.formInput);
+  }
+
   render(){
     // Component classes always get a render method
     return (
     // Always only return a SINGLE JSX element. Everything else must be nested
-            <form className="store-selector">
-              { /* This how to comment in JSX :-! Best to avoid!*/ }
-              { /* Must use JS block comments with asterisks. // will comment out the end of curly brackets*/ }
-              { /* Also never comment with curly brackets right below "return!"It will give an error */}
+            <form className="store-selector" 
+                  onSubmit={this.goToStore}
+                  ref={ input =>  this.formInput = input }>
               <h2>Please enter a store</h2>
-              <input type="text" placeholder="Store Name" required/>
+              <input type="text" placeholder="Store Name" required defaultValue={getFunName()}/>
               <button type="submit">Visit Store</button>
             </form>
             )
